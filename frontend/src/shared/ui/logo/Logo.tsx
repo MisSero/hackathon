@@ -1,5 +1,10 @@
-export const Logo = () => (
+type LogoProps = {
+    className?: string;
+};
+
+export const Logo = ({ className }: LogoProps) => (
     <svg
+        className={className}
         style={{ width: '175px', height: '34.5px' }}
         width="352"
         height="69"

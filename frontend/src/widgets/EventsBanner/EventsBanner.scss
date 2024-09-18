@@ -1,0 +1,28 @@
+.eventsBanner {
+  // height: 125px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/src/shared/ui/images/banner.png');
+  background-size: cover;
+  color: white;
+  padding: 20px 100px;
+
+  &__title {
+    font-size: 20px;
+  }
+
+  &__subtitle {
+    margin-top: 5px;
+    font-size: 18px;
+  }
+
+  &__title,
+  &__subtitle {
+    font-weight: 400;
+  }
+
+  &__description {
+    margin-top: 15px;
+    font-size: 14px;
+    width: 700px;
+  }
+}

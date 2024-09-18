@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
 
 :root {
-  font-family: 'Golos Text', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--main-font-family);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.25;
@@ -13,14 +13,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --main-font-family: 'Golos Text', system-ui, Avenir, Helvetica, Arial, sans-serif;
+
   --bg-primary-color: #e5e5e5;
   --bg-secondary-color: #ffffff;
   --primary-text-color: #000000;
   --secondary-text-color: #888888;
   --green-stroke-color: #24ac5d;
   --block-stroke-color: #d9d9d9;
+  --active-green-color: #82b6a6;
+  --disabled-green-color: #bbd5cd;
+  --selection-color: #9ae0dc;
 
   --header-height: 75px;
+  --page-padding: 50px;
 }
 
 html,
@@ -52,4 +58,8 @@ h3 {
 a.unsettedLink {
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  cursor: pointer;
 }

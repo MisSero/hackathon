@@ -1,0 +1,25 @@
+.appHeader {
+  height: var(--header-height);
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-secondary-color);
+
+  &__logo {
+    margin-top: 5px;
+  }
+
+  &__actions {
+    margin-left: auto;
+    display: flex;
+    gap: 30px;
+  }
+
+  .actionLink {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    color: inherit;
+  }
+}

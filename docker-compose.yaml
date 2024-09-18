@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./resorces:/var/www
+    depends_on:
+      - users
+      - events
+  
+  users:
+    container_name: users
+    build:
+      context: ./backend/src/Users.Service
+      dockerfile: ./Users.Service/Dockerfile
+    restart: always
+    ports: 
+      - 8081:8080
+      
+  events:
+    container_name: events
+    build:
+      context: ./backend/src/Events.Service
+      dockerfile: ./Events.Service/Dockerfile
+    restart: always
+    ports: 
+      - 8082:8080
+      
+  database:
+    container_name: database
+    image: postgres
+    environment:
+      POSTGRES_DB: "green_code"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "admin"
+      POSTGRES_HOST: "database"
+      POSTGRES_PORT: "5432"
+    restart: always
+    volumes: 
+      - database:/var/lib/postgresql/data
+      
+volumes:
+  database:

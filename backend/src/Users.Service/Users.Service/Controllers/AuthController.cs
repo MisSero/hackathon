@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Web;
 using Users.Service.DTOs.UsersDTO;
 using Users.Service.Services.Interfaces;
 

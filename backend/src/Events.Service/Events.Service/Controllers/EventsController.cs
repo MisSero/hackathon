@@ -11,7 +11,7 @@ namespace Events.Service.Controllers;
 /// Контроллер для работы с аутентификацией.
 /// </summary>
 [ApiController]
-[Route("api/users/[controller]")]
+[Route("api/events")]
 public class EventsController : ControllerBase
 {
     private readonly IEventStorage _eventStorage;

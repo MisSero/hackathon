@@ -13,7 +13,7 @@ export const EventsPage = () => {
                     <Card
                         img={event1}
                         title="Экологическая игра - викторина EcoFreedom"
-                        link="/"
+                        link="/events/1"
                         description="Московская обл., г. Москва, ул. Вавилова, 45"
                         info="Суббота, 21 сентября"
                     />

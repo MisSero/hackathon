@@ -21,7 +21,7 @@ public sealed class AppDbContext : DbContext
         var role1 = new Role
         {
             Id = 1,
-            Name = Enums.Roles.Admin.ToString(),
+            Name = Enums.Roles.User.ToString(),
         };
         var role2 = new Role
         {

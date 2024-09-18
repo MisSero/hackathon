@@ -60,16 +60,22 @@ namespace Users.Service
 
             var app = builder.Build();
 
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyHeader());
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
-
             app.MapControllers();
+
+            app.MapGet("/", () => "Hello world from UserService");
 
             app.Run();
         }

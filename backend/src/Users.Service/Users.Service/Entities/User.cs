@@ -8,7 +8,7 @@ public class User
     public string UserName { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string PasswordHash { get; set; } = string.Empty;
-    public DateTime CreationDate { get; set; } = DateTime.Now;
+    public DateTime CreationDate { get; set; } = DateTime.UtcNow;
 
     public int? Gender { get; set; } = (int)Genders.Female;
     public int? Age { get; set; } = null;

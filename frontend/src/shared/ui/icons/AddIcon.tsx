@@ -11,7 +11,7 @@ export const AddIcon = () => (
             width="57"
             height="57"
             rx="10"
-            fill="#BBD5CD"
+            fill="#82b6a6"
         />
         <path
             d="M17.333 29h21.334M28 18.333v21.334"

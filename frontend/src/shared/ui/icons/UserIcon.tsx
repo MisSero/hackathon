@@ -11,7 +11,7 @@ export const UserIcon = () => (
             width="57"
             height="57"
             rx="10"
-            fill="#BBD5CD"
+            fill="#82b6a6"
         />
         <path
             fill-rule="evenodd"

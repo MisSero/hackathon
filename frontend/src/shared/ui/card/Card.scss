@@ -1,0 +1,36 @@
+.card {
+  --border-size: 2px;
+  --border-radius: 5px;
+
+  display: grid;
+  grid-template-rows: auto 155px;
+  width: 300px;
+  border: var(--border-size) solid var(--block-stroke-color);
+  border-left: var(--border-size) solid var(--green-stroke-color);
+  background-color: var(--bg-secondary-color);
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+
+  &__data {
+    padding: 10px;
+    overflow: auto;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 17px;
+  }
+
+  &__description {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--secondary-text-color);
+  }
+
+  &__info {
+    margin-top: 20px;
+  }
+}

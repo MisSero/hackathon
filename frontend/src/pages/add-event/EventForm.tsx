@@ -7,7 +7,6 @@ import './EventForm.scss';
 
 export const EventForm = () => {
     const formMethods = useForm();
-    const { handleSubmit } = formMethods;
 
     return (
         <FormProvider {...formMethods}>

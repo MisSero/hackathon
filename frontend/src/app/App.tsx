@@ -5,12 +5,14 @@ import { EventPage } from '@/pages/event/EventPage';
 import { AuthPage } from '@/pages/auth/AuthPage';
 import { LogInForm } from '@/features/auth/ui/LogInForm';
 import { SignUpForm } from '@/features/auth/ui/SignUpForm';
-import './App.scss';
 import { EventFormPage } from '@/pages/add-event/EventFormPage';
+import { reatomContext } from '@reatom/npm-react';
+import { ctx } from '@/shared/reatom/context';
+import './App.scss';
 
 function App() {
     return (
-        <>
+        <reatomContext.Provider value={ctx}>
             <Router>
                 <Routes>
                     <Route
@@ -42,7 +44,7 @@ function App() {
                     </Route>
                 </Routes>
             </Router>
-        </>
+        </reatomContext.Provider>
     );
 }
 

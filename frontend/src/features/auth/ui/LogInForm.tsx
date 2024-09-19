@@ -1,9 +1,11 @@
 import { useForm } from 'react-hook-form';
 import { AuthFormData } from '../models/types';
 import { useNavigate } from 'react-router-dom';
+import { reatomComponent } from '@reatom/npm-react';
 import './AuthForm.scss';
+import { loginAction } from '@/entities/User';
 
-export const LogInForm = () => {
+export const LogInForm = reatomComponent(({ ctx }) => {
     const navigate = useNavigate();
 
     const {
@@ -13,7 +15,7 @@ export const LogInForm = () => {
     } = useForm<AuthFormData>();
 
     const onLogIn = async (data: AuthFormData) => {
-        console.log(data);
+        await loginAction(ctx, data);
         navigate('/');
     };
 
@@ -46,4 +48,4 @@ export const LogInForm = () => {
             </button>
         </form>
     );
-};
+});

@@ -1,10 +1,11 @@
-import axios from 'axios';
-import { LoginRequest, SignupRequest, UserInfo } from './types';
+import { LoginRequest, LoginResponse, SignupRequest, UserInfo } from './types';
+import { httpClient } from './httpClient';
 
 export const signupRequest = async (data: SignupRequest) =>
-    (await axios.post('/api/users/Auth/register', data)).data as number;
+    (await httpClient.post('/api/users/Auth/register', data)).data as number;
 
 export const loginRequest = async (data: LoginRequest) =>
-    (await axios.post('/api/users/Auth/login', data)).data;
+    (await httpClient.post('/api/users/Auth/login', data)).data as LoginResponse;
 
-export const userInfoRequest = async () => (await axios.get('/api/users/info')).data as UserInfo;
+export const userInfoRequest = async () =>
+    (await httpClient.get('/api/users/info')).data as UserInfo;

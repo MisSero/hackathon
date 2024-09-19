@@ -3,13 +3,14 @@ version: '3'
 services:
   nginx:
     container_name: nginx
-    image: nginx:latest
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
     restart: always
     ports:
       - "80:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./resorces:/var/www
     depends_on:
       - users
       - events

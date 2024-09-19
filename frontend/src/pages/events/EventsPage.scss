@@ -1,0 +1,15 @@
+.eventsPage {
+  padding: 0 50px;
+
+  &__title {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  &__events {
+    padding: var(--page-padding);
+    padding-top: 20px;
+    background-color: var(--bg-secondary-color);
+  }
+}

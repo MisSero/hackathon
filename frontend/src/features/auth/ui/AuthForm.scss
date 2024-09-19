@@ -1,0 +1,26 @@
+.authForm {
+  display: grid;
+  gap: 20px;
+  width: 300px;
+
+  --form-element-height: 40px;
+
+  &__input {
+    padding: 0 10px;
+  }
+
+  &__input,
+  &__submit {
+    height: var(--form-element-height);
+  }
+
+  &__submit {
+    background-color: var(--active-green-color);
+    border: unset;
+    color: white;
+
+    &:disabled {
+      background-color: var(--disabled-green-color);
+    }
+  }
+}

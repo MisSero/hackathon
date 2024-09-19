@@ -7,7 +7,7 @@ const createHttpClient = () => {
         const jwt = localStorage.getItem('jwtToken');
 
         if (jwt) {
-            request.headers.Authorization = `Bearer ${jwt}`;
+            request.headers.Authorization = `Bearer ${JSON.parse(jwt).data}`;
         }
 
         return request;

@@ -105,13 +105,27 @@ public class EventsController : ControllerBase
     /// <summary>
     /// Верификация мероприятия.
     /// </summary>
-    /// <response code="200">Мероприятие успешно добавлено.</response>
+    /// <response code="200">Мероприятие успешно верифицировано.</response>
     [ProducesResponseType(StatusCodes.Status200OK)]
     [HttpPatch("verify/{id}")]
     [Authorize(Roles = $"{nameof(Roles.Admin)}")]
     public async Task<IActionResult> VerifyEvent(int id)
     {
         await _eventStorage.VerifyEvent(id);
+
+        return Ok();
+    }
+
+    /// <summary>
+    /// Удаления мероприятия. Используется, когда модератор отклоняет мероприятие.
+    /// </summary>
+    /// <response code="200">Мероприятие успешно удалено.</response>
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [HttpDelete("{id}")]
+    [Authorize(Roles = $"{nameof(Roles.Admin)}")]
+    public async Task<IActionResult> DeleteEvent(int id)
+    {
+        await _eventStorage.DeleteEvent(id);
 
         return Ok();
     }

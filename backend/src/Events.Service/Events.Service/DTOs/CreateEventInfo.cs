@@ -93,12 +93,10 @@ public class CreateEventInfo
     /// <summary>
     /// ОГРН.
     /// </summary>
-    [Required]
     public string OGRN { get; set; } = string.Empty;
 
     /// <summary>
     /// ИНН.
     /// </summary>
-    [Required]
     public string INN { get; set; } = string.Empty;
 }

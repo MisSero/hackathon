@@ -17,6 +17,12 @@ public class EventInfo
     public string Title { get; set; } = string.Empty;
 
     /// <summary>
+    /// Идентификатор пользователя, создавшего событие.
+    /// </summary>
+    [Required]
+    public int CreatorId { get; set; }
+
+    /// <summary>
     /// Тип события.
     /// </summary>
     [Required]
@@ -98,4 +104,20 @@ public class EventInfo
     /// </summary>
     [Required]
     public string OrganizationName { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Контактный номер телефона.
+    /// </summary>
+    [Required]
+    public string PhoneNumber { get; set; } = string.Empty;
+
+    /// <summary>
+    /// ОГРН.
+    /// </summary>
+    public string OGRN { get; set; } = string.Empty;
+
+    /// <summary>
+    /// ИНН.
+    /// </summary>
+    public string INN { get; set; } = string.Empty;
 }

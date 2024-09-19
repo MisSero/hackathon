@@ -13,4 +13,6 @@ public interface IEventStorage
     public Task<int> AddEvent(Event eventModel);
 
     public Task VerifyEvent(int id);
+
+    public Task DeleteEvent(int id);
 }

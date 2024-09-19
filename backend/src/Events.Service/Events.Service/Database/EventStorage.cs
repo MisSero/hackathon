@@ -56,4 +56,19 @@ public class EventStorage : IEventStorage
 
         await _appDbContext.SaveChangesAsync();
     }
+
+    public async Task DeleteEvent(int id)
+    {
+        var eventModel = await _appDbContext.Events
+            .FirstOrDefaultAsync(e => e.Id == id);
+
+        if (eventModel == null)
+        {
+            return;
+        }
+
+        _appDbContext.Events.Remove(eventModel);
+
+        await _appDbContext.SaveChangesAsync();
+    }
 }

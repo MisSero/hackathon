@@ -25,6 +25,7 @@ public static class EventConverter
         {
             Id = model.Id,
             Title = model.Title,
+            CreatorId = model.CreatorId,
             EventType = model.EventType,
             Format = model.Format,
             Address = model.Address,
@@ -39,6 +40,9 @@ public static class EventConverter
             MainImageLink = model.MainImageLink,
             ImagesLinks = model.ImagesLinks,
             OrganizationName = model.OrganizationName,
+            PhoneNumber = model.PhoneNumber,
+            OGRN = model.OGRN,
+            INN = model.INN
         };
 
         return eventInfo;

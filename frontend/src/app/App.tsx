@@ -6,6 +6,7 @@ import { AuthPage } from '@/pages/auth/AuthPage';
 import { LogInForm } from '@/features/auth/ui/LogInForm';
 import { SignUpForm } from '@/features/auth/ui/SignUpForm';
 import './App.scss';
+import { EventFormPage } from '@/pages/add-event/EventFormPage';
 
 function App() {
     return (
@@ -23,6 +24,10 @@ function App() {
                         <Route
                             path="/events/:eventId"
                             element={<EventPage />}
+                        />
+                        <Route
+                            path="/add-event"
+                            element={<EventFormPage />}
                         />
                     </Route>
                     <Route element={<AuthPage />}>

@@ -9,9 +9,9 @@ export const AppHeader = () => (
         <div className="appHeader__actions">
             <Link
                 className="unsettedLink actionLink"
-                to="/create-event"
+                to="/add-event"
             >
-                Создать мероприятие
+                Добавить мероприятие
                 <AddIcon />
             </Link>
             <Link

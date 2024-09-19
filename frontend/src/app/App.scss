@@ -63,3 +63,8 @@ a.unsettedLink {
 button {
   cursor: pointer;
 }
+
+.sideStroked {
+  border-left-color: var(--green-stroke-color);
+  border-bottom-color: var(--green-stroke-color);
+}

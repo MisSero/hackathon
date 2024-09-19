@@ -9,4 +9,6 @@ public interface IUserStorage
     public Task<int> AddAsync(User user);
 
     public Task<User?> GetUserByUsername(string userName);
+
+    public Task<User?> GetUserById(int id);
 }

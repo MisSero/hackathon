@@ -50,6 +50,8 @@ public sealed class AppDbContext : DbContext
                 // пароль - string
                 PasswordHash = "AQAAAAIAAYagAAAAEIkUamzDMfkTuzbrabohW9DV6Z+q0n9qpcnIVLQsK4NAJ4kolcNcefhISei6YH/Yzw==",
                 UserName = "admin",
+                Gender = 0,
+                Age = 18,
                 RoleId = role2.Id,
             });
     }

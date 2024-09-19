@@ -9,6 +9,7 @@ using Users.Service.Database;
 using Users.Service.Entities;
 using Users.Service.Services.Implementations;
 using Users.Service.Services.Interfaces;
+using Microsoft.OpenApi.Models;
 
 namespace Users.Service
 {
@@ -56,6 +57,26 @@ namespace Users.Service
                 string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 config.IncludeXmlComments(xmlPath);
+
+                var securityScheme = new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Description = "Enter JWT Bearer token",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    BearerFormat = "JWT",
+                    Reference = new OpenApiReference
+                    {
+                        Id = JwtBearerDefaults.AuthenticationScheme,
+                        Type = ReferenceType.SecurityScheme
+                    }
+                };
+                config.AddSecurityDefinition(securityScheme.Reference.Id, securityScheme);
+                config.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {securityScheme, new string[] { }}
+                });
             });
 
             var app = builder.Build();

@@ -36,4 +36,13 @@ public class UserStorage : IUserStorage
 
         return user;
     }
+
+    public async Task<User?> GetUserById(int id)
+    {
+        var user = await _appDbContext.Users
+            .Include(u => u.Role)
+            .FirstOrDefaultAsync(u => u.Id == id);
+
+        return user;
+    }
 }

@@ -1,6 +1,6 @@
-﻿using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using Users.Service.Converters;
 using Users.Service.Database;
 using Users.Service.DTOs.UsersDTO;
@@ -28,7 +28,7 @@ public class UserController : ControllerBase
     /// <response code="400">Информация по пользователю не найдена.</response>
     [ProducesResponseType(typeof(UserInfo), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [HttpGet("/info")]
+    [HttpGet("info")]
     [Authorize]
     public async Task<IActionResult> GetUserInfo()
     {

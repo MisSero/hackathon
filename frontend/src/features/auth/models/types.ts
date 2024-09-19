@@ -1,8 +1,5 @@
-export type AuthFormData = {
-    userName: string;
-    password: string;
-};
+import { LoginRequest, SignupRequest } from '@/shared/api/types';
 
-export type RegFormData = AuthFormData & {
-    email: string;
-};
+export type AuthFormData = LoginRequest;
+
+export type RegFormData = SignupRequest;

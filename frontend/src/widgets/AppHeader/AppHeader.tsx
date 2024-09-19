@@ -1,6 +1,7 @@
 import { NavigationLogo } from '@/shared/ui/logo/NavigationLogo';
-import { AddIcon, UserIcon } from '@/shared/ui/icons';
+import { AddIcon } from '@/shared/ui/icons';
 import { Link } from 'react-router-dom';
+import { ProfileLink } from './ProfileLink';
 import './AppHeader.scss';
 
 export const AppHeader = () => (
@@ -14,13 +15,7 @@ export const AppHeader = () => (
                 Добавить мероприятие
                 <AddIcon />
             </Link>
-            <Link
-                className="unsettedLink actionLink"
-                to="/login"
-            >
-                Войти
-                <UserIcon />
-            </Link>
+            <ProfileLink />
         </div>
     </header>
 );
